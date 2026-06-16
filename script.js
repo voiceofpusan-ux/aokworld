@@ -356,13 +356,15 @@ function applyLang(lang) {
       if (!entry.isIntersecting) return;
       const el = entry.target;
       const end = parseInt(el.dataset.count);
+      const plain = el.dataset.format === 'plain';
       const start = end > 100 ? end - 50 : 0;
       const dur = end > 1000 ? 1200 : 800;
       const step = (end - start) / (dur / 16);
       let curr = start;
       const timer = setInterval(() => {
         curr = Math.min(curr + step, end);
-        el.textContent = Math.round(curr).toLocaleString();
+        const n = Math.round(curr);
+        el.textContent = plain ? String(n) : n.toLocaleString();
         if (curr >= end) clearInterval(timer);
       }, 16);
       observer.unobserve(el);
