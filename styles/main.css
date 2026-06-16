@@ -592,8 +592,10 @@ img { max-width: 100%; display: block; }
 .world-card::before { content: ''; position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(135deg, var(--teal-tint), transparent); opacity: 0; transition: opacity var(--transition); }
 .world-card:hover { border-color: rgba(0,200,200,0.5); transform: translateY(-8px) scale(1.02); box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), 0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(0,200,200,0.2); }
 .world-card:hover::before { opacity: 1; }
-.world-flag { color: var(--teal); margin-bottom: 16px; line-height: 0; filter: drop-shadow(0 4px 12px rgba(0,200,200,0.25)); transition: transform var(--transition); }
-.world-card:hover .world-flag { transform: scale(1.15) rotate(-5deg); }
+.world-flag { color: var(--teal); height: 88px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; filter: drop-shadow(0 4px 16px rgba(0,200,200,0.3)); transition: transform var(--transition); }
+.world-flag svg { display: inline-block; }
+.world-flag img { max-height: 88px; max-width: 150px; width: auto; height: auto; }
+.world-card:hover .world-flag { transform: scale(1.12) rotate(-4deg); }
 .world-card h3 { font-family: var(--font-en); font-size: 1.2rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
 .world-card p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px; }
 .world-arrow { font-size: 1.2rem; color: var(--teal); opacity: 0; transform: translateX(-8px); display: inline-block; transition: all var(--transition); }
