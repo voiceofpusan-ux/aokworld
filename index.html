@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AOK World | Action One Korea</title>
+  <meta name="description" content="AOK (액션원코리아)는 해내외가 함께하는 풀뿌리운동 단체로 2013년 로스앤젤레스와 서울에서 출범했습니다.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+  <!-- 파티클 캔버스 -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- 커스텀 커서 -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- ── 헤더 ── -->
+  <header class="header" id="header">
+    <div class="header-inner">
+
+      <a href="#hero" class="logo">
+        <div class="logo-icon">A</div>
+        <div class="logo-text">
+          <span class="logo-main">AOK World</span>
+          <span class="logo-sub" data-i18n="logo.sub">Action One Korea</span>
+        </div>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#hero" class="nav-link" data-i18n="nav.home">홈</a>
+
+        <div class="nav-dropdown">
+          <a href="#about" class="nav-link nav-parent" data-i18n="nav.about">AOK소개 <span class="nav-arrow">▾</span></a>
+          <div class="nav-sub">
+            <a href="#mission" data-i18n="nav.mission">Mission</a>
+            <a href="#activities" data-i18n="nav.activities">주요활동</a>
+            <a href="#org" data-i18n="nav.org">조직도</a>
+          </div>
+        </div>
+
+        <a href="#history" class="nav-link" data-i18n="nav.history">지나온길</a>
+
+        <div class="nav-dropdown">
+          <a href="#news" class="nav-link nav-parent" data-i18n="nav.news">활동소식 <span class="nav-arrow">▾</span></a>
+          <div class="nav-sub">
+            <a href="#news-2022" data-i18n="nav.news">활동소식</a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <a href="#resources" class="nav-link nav-parent" data-i18n="nav.resources">자료실 <span class="nav-arrow">▾</span></a>
+          <div class="nav-sub">
+            <a href="#photos" data-i18n="nav.photos">사진</a>
+            <a href="#videos" data-i18n="nav.videos">동영상</a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <a href="#member" class="nav-link nav-parent" data-i18n="nav.member">회원 <span class="nav-arrow">▾</span></a>
+          <div class="nav-sub">
+            <a href="#member-form" data-i18n="nav.memberForm">회원가입서</a>
+          </div>
+        </div>
+
+        <a href="#contact" class="nav-link" data-i18n="nav.contact">오시는 길</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-switch" id="langSwitch">
+          <button class="lang-btn active" data-lang="ko">KO</button>
+          <span class="lang-div">|</span>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <a href="#member" class="btn btn-nav btn-nav-ghost" data-i18n="nav.join">회원가입</a>
+        <a href="#contact" class="btn btn-nav" data-i18n="nav.contact">오시는 길</a>
+        <button class="nav-toggle" id="navToggle" aria-label="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <div class="hero-orb hero-orb-3"></div>
+    </div>
+
+    <div class="hero-inner">
+      <div class="hero-badge reveal-hero">
+        <span class="badge-dot"></span>
+        <span data-i18n="hero.badge">2013 · Los Angeles & Seoul</span>
+      </div>
+
+      <div class="hero-title">
+        <span class="hero-title-main reveal-hero delay-1">AOK World</span>
+        <span class="hero-title-sub reveal-hero delay-2" data-i18n="hero.subtitle">해내외가 함께하는<br>풀뿌리운동</span>
+      </div>
+
+      <p class="hero-desc reveal-hero delay-3" data-i18n="hero.desc">
+        AOK (액션원코리아)는 해내외가 함께하는 풀뿌리운동 단체로<br>
+        2013년 로스앤젤레스와 서울에서 출범했습니다.
+      </p>
+
+      <div class="hero-actions reveal-hero delay-4">
+        <a href="#about" class="btn btn-primary btn-lg" data-i18n="hero.cta1">더 알아보기</a>
+        <a href="#member" class="btn btn-outline btn-lg" data-i18n="hero.cta2">함께하기</a>
+      </div>
+
+      <div class="hero-stats reveal-hero delay-4">
+        <div class="stat">
+          <span class="stat-num" data-count="5">5</span>
+          <span class="stat-label" data-i18n="hero.countries">개국</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-count="2013">2013</span>
+          <span class="stat-label" data-i18n="hero.since">년 출범</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-count="10">10</span>
+          <span class="stat-label" data-i18n="hero.years">년 활동</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+      <span data-i18n="hero.scroll">스크롤</span>
+    </div>
+  </section>
+
+  <!-- ── AOK WORLD (국가별) ── -->
+  <section class="aok-world-section" id="aok-world">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Global Network</div>
+        <h2 class="section-title" data-i18n="world.title">AOK World</h2>
+        <p class="section-desc" data-i18n="world.desc">전 세계 풀뿌리 시민들과 함께합니다</p>
+      </div>
+
+      <div class="world-grid">
+        <div class="world-card reveal reveal-pop delay-1">
+          <div class="world-flag">🇰🇷</div>
+          <h3>Korea</h3>
+          <p data-i18n="world.korea">서울 — 풀뿌리운동의 본거지</p>
+          <span class="world-arrow">→</span>
+        </div>
+        <div class="world-card reveal reveal-pop delay-2">
+          <div class="world-flag">🇺🇸</div>
+          <h3>USA</h3>
+          <p data-i18n="world.usa">Los Angeles — 해외 출범지</p>
+          <span class="world-arrow">→</span>
+        </div>
+        <div class="world-card reveal reveal-pop delay-3">
+          <div class="world-flag">🇨🇳</div>
+          <h3>China</h3>
+          <p data-i18n="world.china">중국 — 해외 네트워크</p>
+          <span class="world-arrow">→</span>
+        </div>
+        <div class="world-card reveal reveal-pop delay-4">
+          <div class="world-flag">🇯🇵</div>
+          <h3>Japan</h3>
+          <p data-i18n="world.japan">일본 — 해외 네트워크</p>
+          <span class="world-arrow">→</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">About AOK</div>
+        <h2 class="section-title" data-i18n="about.title">AOK 소개</h2>
+      </div>
+
+      <div class="about-grid">
+        <!-- Mission -->
+        <div class="about-card reveal-left delay-1" id="mission">
+          <div class="about-card-glow"></div>
+          <div class="about-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+            </svg>
+          </div>
+          <h3 data-i18n="about.mission.title">Mission</h3>
+          <p data-i18n="about.mission.desc">풀뿌리 시민의 힘으로 통일시대를 열어갑니다.</p>
+        </div>
+
+        <!-- 주요활동 -->
+        <div class="about-card reveal delay-2" id="activities">
+          <div class="about-card-glow"></div>
+          <div class="about-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+            </svg>
+          </div>
+          <h3 data-i18n="about.activities.title">주요활동</h3>
+          <ul class="about-list">
+            <li data-i18n="about.activities.1">생활속의 통일운동</li>
+            <li data-i18n="about.activities.2">역사정체성 회복운동</li>
+            <li data-i18n="about.activities.3">분단의 아픔을 치유하는 문화운동</li>
+            <li data-i18n="about.activities.4">국가보안법폐지 운동</li>
+          </ul>
+        </div>
+
+        <!-- 조직도 -->
+        <div class="about-card reveal-right delay-3" id="org">
+          <div class="about-card-glow"></div>
+          <div class="about-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3 data-i18n="about.org.title">조직도</h3>
+          <p data-i18n="about.org.desc">해내외 네트워크로 연결된 시민운동 단체.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MISSION QUOTE ── -->
+  <section class="mission-section">
+    <div class="container">
+      <div class="mission-quote reveal">
+        <span class="quote-mark">"</span>
+        <p data-i18n="mission.quote">통일시대를 풀뿌리 시민들의 힘으로 열어가고자<br>생활속의 통일운동, 역사정체성 회복운동,<br>분단의 아픔을 치유하는 문화운동,<br>국가보안법폐지 운동에 힘쓰고 있습니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HISTORY ── -->
+  <section class="history" id="history">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Since 2013</div>
+        <h2 class="section-title" data-i18n="history.title">지나온길</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-line"></div>
+
+        <a href="#" class="timeline-item reveal delay-1">
+          <div class="timeline-dot"></div>
+          <span class="timeline-year">2021</span>
+          <span class="timeline-desc" data-i18n="history.2021">활동 내역 보기</span>
+        </a>
+        <a href="#" class="timeline-item reveal delay-2">
+          <div class="timeline-dot"></div>
+          <span class="timeline-year">2020</span>
+          <span class="timeline-desc" data-i18n="history.2020">활동 내역 보기</span>
+        </a>
+        <a href="#" class="timeline-item reveal delay-3">
+          <div class="timeline-dot"></div>
+          <span class="timeline-year">2019</span>
+          <span class="timeline-desc" data-i18n="history.2019">활동 내역 보기</span>
+        </a>
+        <a href="#" class="timeline-item reveal delay-4">
+          <div class="timeline-dot"></div>
+          <span class="timeline-year">2018</span>
+          <span class="timeline-desc" data-i18n="history.2018">활동 내역 보기</span>
+        </a>
+        <a href="#" class="timeline-item reveal delay-5">
+          <div class="timeline-dot"></div>
+          <span class="timeline-year">2017</span>
+          <span class="timeline-desc" data-i18n="history.2017">활동 내역 보기</span>
+        </a>
+        <a href="#" class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <span class="timeline-year">2013</span>
+          <span class="timeline-desc" data-i18n="history.2013">출범 — LA & 서울</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── NEWS ── -->
+  <section class="news" id="news">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Latest</div>
+        <h2 class="section-title" data-i18n="news.title">활동소식</h2>
+      </div>
+
+      <div class="news-grid" id="news-2022">
+        <a href="#" class="news-card reveal delay-1">
+          <div class="news-card-inner">
+            <span class="news-tag">2022</span>
+            <h3 data-i18n="news.2022.title">2022년 활동소식</h3>
+            <p data-i18n="news.2022.desc">2022년의 주요 활동 내역을 확인하세요.</p>
+            <span class="news-more" data-i18n="news.more">자세히 보기 →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── RESOURCES ── -->
+  <section class="resources" id="resources">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Resources</div>
+        <h2 class="section-title" data-i18n="resources.title">자료실</h2>
+      </div>
+
+      <div class="resources-grid">
+        <a href="#photos" class="resource-card reveal-pop delay-1" id="photos">
+          <div class="resource-icon-wrap">
+            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+          </div>
+          <h3 data-i18n="resources.photos">사진</h3>
+          <p data-i18n="resources.photos.desc">활동 사진 갤러리</p>
+        </a>
+        <a href="#videos" class="resource-card reveal-pop delay-2" id="videos">
+          <div class="resource-icon-wrap">
+            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/>
+            </svg>
+          </div>
+          <h3 data-i18n="resources.videos">동영상</h3>
+          <p data-i18n="resources.videos.desc">활동 동영상</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MEMBER ── -->
+  <section class="member" id="member">
+    <div class="container">
+      <div class="member-inner reveal">
+        <div class="member-content">
+          <div class="section-tag">Join Us</div>
+          <h2 data-i18n="member.title">함께하는 시민이 되어 주세요</h2>
+          <p data-i18n="member.desc">AOK와 함께 통일시대를 만들어가는 풀뿌리 시민운동에 참여하세요.</p>
+        </div>
+        <div class="member-cta">
+          <a href="#member-form" class="btn btn-primary btn-lg" data-i18n="member.btn" id="member-form">회원가입서</a>
+          <p class="member-note" data-i18n="member.note">회원가입서를 다운로드하여 작성 후 제출해 주세요.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Contact</div>
+        <h2 class="section-title" data-i18n="contact.title">오시는 길 & 후원</h2>
+      </div>
+
+      <div class="contact-grid">
+        <!-- 오시는 길 -->
+        <div class="contact-card reveal-left delay-1">
+          <div class="contact-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <h3 data-i18n="contact.location">오시는 길</h3>
+          <p data-i18n="contact.address">서울특별시 종로구 창덕궁길 29-6 (원서동)<br>북촌창우극장 2층 AOK</p>
+          <div class="contact-links">
+            <a href="https://map.kakao.com" target="_blank" rel="noopener" class="contact-link">🗺 카카오맵</a>
+            <a href="https://maps.google.com" target="_blank" rel="noopener" class="contact-link">📍 Google Maps</a>
+          </div>
+        </div>
+
+        <!-- 후원계좌 -->
+        <div class="contact-card reveal-right delay-2">
+          <div class="contact-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/>
+            </svg>
+          </div>
+          <h3 data-i18n="contact.donate">후원계좌</h3>
+          <div class="donate-accounts">
+            <div class="donate-row">
+              <span class="donate-bank" data-i18n="contact.postbank">우체국</span>
+              <span class="donate-num">012345-01-123456</span>
+              <span class="donate-name">AOK</span>
+            </div>
+            <div class="donate-row">
+              <span class="donate-bank" data-i18n="contact.kakaobank">카카오</span>
+              <span class="donate-num">3333-01-1234567</span>
+              <span class="donate-name">AOK</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <div class="logo-icon small">A</div>
+          AOK World
+        </div>
+        <p data-i18n="footer.copy">© Action One Korea. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#about">소개</a>
+          <a href="#contact">연락처</a>
+          <a href="#member">회원가입</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
